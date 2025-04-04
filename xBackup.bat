@@ -7,7 +7,7 @@ echo.
 :: Be sure there's no trailing slash!
 
 :: Where is the dir you want to backup?
-SET Directory=C:\noxxrp\serverdata
+SET Directory=
 
 :: Where should the backups be stored?
 SET BackupDir=Backup
@@ -19,7 +19,7 @@ SET CompressionProgram=7Zip
 SET CompressionProgramDir=C:\Program Files\7-Zip
 
 :: The name of the folder inside the zip
-SET ZipFolderName=serverdata
+SET ZipFolderName=
 
 ::=======================================================================================::
 :: I wouldn't edit anything past here if I were you, but if you want to, go right ahead! ::
@@ -53,7 +53,7 @@ echo.
 :: Use robocopy with file and folder exclusions
 robocopy "%Directory%" "temp\%ZipFolderName%" /E /NFL /NDL /NJH /NJS /NC /NS ^
  /XF *.zip *.7z *.rar ^
- /XD "%Directory%\cache" "%Directory%\[baju]" "%Directory%\[vehicles]"
+ /XD "%Directory%\cache"
 
 echo.
 echo Finished copying at %DATE% - %TIME%
